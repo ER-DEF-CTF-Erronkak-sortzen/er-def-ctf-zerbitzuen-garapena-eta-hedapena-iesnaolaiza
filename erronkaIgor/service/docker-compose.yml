@@ -1,0 +1,15 @@
+version: '3'
+services:    
+    ssh:
+        build:
+            context: ./ssh
+            dockerfile: Dockerfile
+        ports:
+            - "9922:22"
+    ftp:
+        build:
+            context: ./ftp  # Dockerfile eta konfigurazioaren kokapena
+            dockerfile: Dockerfile
+        #container_name: ftp-server
+        ports:
+            - "8821:21"

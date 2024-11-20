@@ -28,7 +28,7 @@
         dest: "{{ scripts_destination_folder }}"
       loop: "{{ services_to_install.stdout_lines }}"
 
-    - name: Make script executable
+    - name: Make script executable (clean)
       shell: chmod +x {{ scripts_destination_folder }}clean_{{ item }}.sh
       loop: "{{ services_to_install.stdout_lines }}"
 
