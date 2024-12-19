@@ -12,3 +12,11 @@ services:
             dockerfile: Dockerfile
         ports:
             - "8822:22"
+            
+'''ftp:
+        build:
+            context: ./ftp  # Dockerfile eta konfigurazioaren kokapena
+            dockerfile: Dockerfile
+        #container_name: ftp-server
+        ports:
+            - "8821:21"'''
