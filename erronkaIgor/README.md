@@ -1,10 +1,11 @@
+
 # Service definition:
 - We have two dockers: 
 1. An Ubuntu (latest version) one which contains the flags. 
 2. One who has install FTP service. 
 The attacker has access to ftp (web_docker) with the default password 'anonymous' and has to look for information that can help him accessing the other docker.
 The flags are stored in that last docker's file and attacker has to let them in his T-Submission machine. 
-
+ 
 # Service implementation:
 FTP docker is configured to take a copy pass.txt file from the host machine, letting it in '/home/ftperab1/ftp/files/pass.txt'. 
 SSH docker is configured attending to the following tips:
