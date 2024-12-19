@@ -81,7 +81,7 @@ class MyChecker(checkerlib.BaseChecker):
     def _add_new_flag(self, ssh_session, flag):
         print(f"_add_new_flag")
         # Execute the file creation command in the container
-        command = f"docker exec erronkaigor_ftp_1 sh -c 'echo {flag} >> /tmp/flag.txt'"
+        command = f"docker exec erronkaigor_ssh_1 sh -c 'echo {flag} >> /tmp/flag.txt'"
         stdin, stdout, stderr = ssh_session.exec_command(command)
 
         # Check if the command executed successfully
@@ -95,7 +95,7 @@ class MyChecker(checkerlib.BaseChecker):
     def _check_flag_present(self, flag):
         print(f"_check_flag_present")
         ssh_session = self.client
-        command = f"docker exec erronkaigor_ftp_1 sh -c 'grep {flag} /tmp/flag.txt'"
+        command = f"docker exec erronkaigor_ssh_1 sh -c 'grep {flag} /tmp/flag.txt'"
         stdin, stdout, stderr = ssh_session.exec_command(command)
         if stderr.channel.recv_exit_status() != 0:
             return False
